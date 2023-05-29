@@ -1,0 +1,98 @@
+Chip 9 Documentation
+=========================
+
+Hello, World! Chip 9? What is it?
+Chip 9 was a project I've been working on
+very inspired from the famous language instruction set, chip 8!
+However chip 9 is designed to be even EASIER to implement and write
+games for chip 9. Chip 9 has its own registers, opcodes, opcode tables,
+memory address, etc. Chip 9 is a lot different from chip 8. So, lets get
+down too it!
+
+Specifications
+===================
+
+The amount of memory in Chip 9
+is almost the same in chip 8: 4096 (4096 memory KB)
+
+Here's the memory structure.
+
+--------------
+|	     |
+|	     |
+|   Output   | (Any graphics and such are printed here in the output)
+|	     |
+|	     |
+-------------- - 0x200 (512)
+|	     |
+|     ROM    | (Where rom contents are stored)
+|	     |
+-------------- - 0x0 (0)
+
+For res it should be: 64 * 32 (2048)
+
+This is very important for writing graphics.
+
+For input Chip 9 uses W,A,S,D and Q,E. Very different
+compared to Chip 8 where it uses a numpad of somesort.
+
+(IMPORTANT) program counter is set too 0x0
+program counter is used for pointing to instructions in the rom.
+
+It's registers are:
+
+REG1
+REG2
+REG3
+REG4
+REG5
+REG6
+REG7
+REG8
+REG9
+REG10
+REGVF (REGVF is used for storing values for printing to the screen)
+
+Anything that gets stored in REGVF like ints or strings REGVF automatically should take
+that value and put that in 0x200 (512) which then outputs too the screen.
+
+Chip 9 does NOT emulate chip 8's Roms. It uses its own chip 9 rom.
+At the moment, Chip 9 has two roms. IBM Logo ROM, and Space invaders.
+
+Opcodes
+===================
+
+
+In chip 9 opcodes are instruction defined as partial machine code.
+Like for example "MOV REG1, 5" This is the same as 0x001 in chip 9.
+
+These opcodes are stored in the ROM then when loaded the "program counter"
+Start's executing these Opcodes. (The program counter is loaded at 0x0 where the rom is at)
+
+In order for the program counter to continue executing instructions until it reaches to the end
+of the rom it needs the program counter to always keep incrementing. Do this after each opcode.
+
+NOTE: Each opcode is 2 bytes just like chip 8 so increment the program counter (PC) by 2. like this: pc += 2
+
+Check out the opcode table for what each code is and their functions as well as an instruction set.
+
+
+
+Program counter
+===================
+
+Program counter is a pointer that always indicates which instruction (also called opcodes) to run next.
+After each instruction is ran the Counter gets incremented by two bytes since every opcode is 2 bytes as well.
+It does this until the rom has no more instructions left.
+
+It's important to know that the PC always starts at 0x0 (0). This is because
+0x0 is where the rom is located thus thats where all the instructions are located in.
+
+Graphics & text
+===================
+
+Chip 9's graphics are pretty simple.
+
+The key too chip 9's graphics is that Anything
+thats stored in 0x200 (Output memory address) automatically
+becomes visible and prints too the screen.

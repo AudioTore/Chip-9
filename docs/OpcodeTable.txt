@@ -1,0 +1,34 @@
+Opcode table
+===================================
+| "0x00E"	"Clears the Console."|
+| "0x001"	"Mov Value to REG"|
+| "0x002"	"Exits the ROM (ends)" |
+| "0x003"	"HLT without a message" |
+| "0x004"	"Print contents of a Register too Output"|
+| "0x005"	"HLT's the CPU"|
+| "0x006"   "'Pushes' a REG's value into output memory"|
+| "0x007"   "Declare function along with code."|
+====================================
+
+Instruction Set
+====================================
+0x00E CLEAR
+0x001 MOV [REG], Value.
+0x002 EXIT
+0x003 MOV REG1, [Reg number]
+0x004 PRINT [REG]
+0x005 HLT
+0x006 PUSH [REG] - By default it pushes to memory address 0x200 (512)
+
+Assigned Register numbers:
+
+REG1 - 0x1
+REG2 - 0x2
+REG3 - 0x3
+REG4 - 0x4
+REG5 - 0x5
+REG6 - 0x6
+REG7 - 0x7
+REG8 - 0x8
+REG9 - 0x9
+REG10 -0x10
