@@ -23,3 +23,7 @@ can only do so much. However You should read my goals with Chip 9.
 - [ ] Ticktacktoe implemented.
 - [ ] Space invaders implemented.
 - [ ] My own ROM format (like .ch8)
+
+## Specifications
+
+If you want too implement this yourself the Specifications are in "docs"
