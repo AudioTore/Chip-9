@@ -18,7 +18,7 @@ can only do so much. However You should read my goals with Chip 9.
 
 ## Goals
 
-- [] Decent instruction Set.
-- [] Ticktacktoe implemented.
-- [] Space invaders implemented.
-- [] My own ROM format (like .ch8)
+- [ ] Decent instruction Set.
+- [ ] Ticktacktoe implemented.
+- [ ] Space invaders implemented.
+- [ ] My own ROM format (like .ch8)
