@@ -18,6 +18,7 @@ can only do so much. However You should read my goals with Chip 9.
 
 ## Goals
 
+- [x] Decent specification (will continue to update specification though)
 - [ ] Decent instruction Set.
 - [ ] Ticktacktoe implemented.
 - [ ] Space invaders implemented.
